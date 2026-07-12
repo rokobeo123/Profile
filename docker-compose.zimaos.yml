@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      context: ./apps/web
+      dockerfile: Dockerfile
+    container_name: personal-os-zima
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - GITHUB_USERNAME=${GITHUB_USERNAME}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - DISCORD_ID=${DISCORD_ID}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - OPENWEATHER_CITY=${OPENWEATHER_CITY}
+      - LASTFM_API_KEY=${LASTFM_API_KEY}
+      - LASTFM_USERNAME=${LASTFM_USERNAME}
+    x-casaos:
+      envs:
+        - key: GITHUB_USERNAME
+          description:
+            en_us: Your GitHub username
+        - key: GITHUB_TOKEN
+          description:
+            en_us: GitHub Personal Access Token (classic) with read:user scope
+        - key: DISCORD_ID
+          description:
+            en_us: Your Discord user ID for live presence
+        - key: OPENWEATHER_API_KEY
+          description:
+            en_us: API Key for OpenWeatherMap
+        - key: OPENWEATHER_CITY
+          description:
+            en_us: The city to track weather for
+
+
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: web
+  description:
+    en_us: A completely personalized dashboard, portfolio, and command center.
+  tagline:
+    en_us: Your Personal Operating System
+  title:
+    en_us: Personal OS
+  category: Web
+  port_map: "3000"
+  icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/nextjs.png
+  author: "Personal OS"
