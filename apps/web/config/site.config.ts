@@ -12,9 +12,10 @@ export const siteConfig = {
     background: "/From Klickpin.com- 29 Trending Elegant Wedding Invitations for Right Now-pin-id-507851295500545904.mp4",
     location: "Hanoi, Vietnam",
     // The "About Me" section
-    biography: `Hi, I'm Inzm! I'm a student Chu Van An High School, Hanoi`,
+    biography: `Hi, I'm Inzm! I'm a student Chu Van An High School, Hanoi \
+                Ex School: TMN-LTV 25'`,
     // The "What I Do" section
-    whatIDo: `Learning C++, enjoying life moment. Also keen on music too!`,
+    whatIDo: `Do anything everyone do`,
   },
 
   // -------------------------------------------------------------
