@@ -12,6 +12,7 @@ services:
     volumes:
       - ./data:/app/data
     environment:
+      - HOSTNAME=0.0.0.0
       - GITHUB_USERNAME=${GITHUB_USERNAME}
       - GITHUB_TOKEN=${GITHUB_TOKEN}
       - DISCORD_ID=${DISCORD_ID}
